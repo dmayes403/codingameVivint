@@ -65,6 +65,10 @@ for (var i = 0; i < message.length; i++) {
       binary += message[i].charCodeAt(0).toString(2);
   }
 
+if(binary.length < 7){
+    binary = '0' + binary;
+}
+
 var currentValue = '';
 var consecutive = 0;
 var NorrisCode = '';
@@ -88,8 +92,54 @@ for(var j = 0; j < binary.length; j++){
         }
 }
 
-// print(binary);
+print(binary);
 print(NorrisCode);
+
+// var message = readline();
+//
+//
+// var message = '%'
+// var binary = "";
+//
+// for (var i = 0; i < message.length; i++) {
+//       binary += message[i].charCodeAt(0).toString(2);
+//   }
+//
+// var currentValue = '';
+// var consecutive = 0;
+// var NorrisCode = '';
+//
+// for(var j = 0; j < binary.length; j++){
+//     currentValue = binary[j];
+//         if(currentValue == 1 && j === 0){
+//             NorrisCode += '0 0';
+//         }
+//         else if(currentValue == 0 && j === 0){
+//             NorrisCode += '00 0';
+//         }
+//         else if(binary[j] === binary[j-1]){
+//             consecutive++
+//         }
+//         else if(binary[j] !== binary[j-1]){
+//             Reset(currentValue)
+//         }
+// }
+//
+// function Reset(value){
+//   for(var i = 0; i < consecutive; i++){
+//     NorrisCode += '0'
+//   }
+//   consecutive = 1;
+//   if(value == 1){
+//     NorrisCode += ' 0 0';
+//   }
+//   else {
+//     NorrisCode += ' 00 0'
+//   }
+// }
+//
+// print(binary);
+// print(NorrisCode);
 
 
 // TEST $4
