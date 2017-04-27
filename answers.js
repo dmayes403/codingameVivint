@@ -12,20 +12,20 @@ var closest = 5527;
 var arrayPlacement = 0;
 
 for(var i = 0; i < newTemps.length; i++){
-    if(Math.abs(newTemps[i]) === closest && newTemps[i] < 0){
-        closest = closest
+    if(Math.abs(newTemps[i]) < closest){
+        closest = Math.abs(newTemps[i]);
+        arrayPlacement = i;
     }
     else if(Math.abs(newTemps[i]) === closest && newTemps[i] > 0){
         closest = newTemps[i]
         arrayPlacement = i
     }
-    else if(Math.abs(newTemps[i]) < closest){
-        closest = Math.abs(newTemps[i]);
-        arrayPlacement = i;
-    }
 }
 
 print(newTemps[arrayPlacement])
+
+
+
 
 
 // TEST #2
@@ -53,6 +53,8 @@ function findFileType(file){
 for (var i = 0; i < Q; i++) {
     print(findFileType(readline()))
 }
+
+
 
 
 // TEST $3
