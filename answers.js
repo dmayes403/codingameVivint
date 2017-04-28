@@ -96,3 +96,38 @@ print(NorrisCode);
 
 
 // TEST #4 /////////////////////////////////////////////
+var inputs = readline().split(' ');
+var W = parseInt(inputs[0]); // width of the building.
+var H = parseInt(inputs[1]); // height of the building.
+var N = parseInt(readline()); // maximum number of turns before game over.
+var inputs = readline().split(' ');
+var X0 = parseInt(inputs[0]);
+var Y0 = parseInt(inputs[1]);
+
+var createArray = []
+
+function findBomb(Height, Width, Turns){
+    var start = 0
+    var end = (W*H)-1
+    while (start <= end && Turns > 0) {
+        print((W*H)/2)
+        var bombDir = readline(); // the direction of the bombs from batman's current location (U, UR, R, DR, D, DL, L or UL)
+        var mid = (start + end)/2;
+        if(mid == bombLoc){
+         print(mid)
+        }
+        else if (location < mid){
+            end = mid -1;
+            Turns--
+        }
+        else if (location > mid){
+            start = mid +1
+            Turns--
+        }
+    }
+}
+
+findBomb(H,W,N);
+
+// ^^^^^^^^^^^^^^^^^^^^^^^^^ I know that this code doesn't work, but this is kind of like pseudo code of the direction my mind was going in
+// to solve the problem.
