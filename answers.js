@@ -131,3 +131,4 @@ findBomb(H,W,N);
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^ I know that this code doesn't work, but this is kind of like pseudo code of the direction my mind was going in
 // to solve the problem.
+//
