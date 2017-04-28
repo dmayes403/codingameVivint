@@ -1,4 +1,4 @@
-// TEST #1
+// TEST #1 //////////////////////////////////////////
 var n = parseInt(readline()); // the number of temperatures to analyse
 var temps = readline(); // the n temperatures expressed as integers ranging from -273 to 5526
 
@@ -7,7 +7,6 @@ if(!temps.length){
 }
 
 var newTemps = temps.split(' ');
-
 var closest = 5527;
 var arrayPlacement = 0;
 
@@ -28,10 +27,9 @@ print(newTemps[arrayPlacement])
 
 
 
-// TEST #2
+// TEST #2 //////////////////////////////////////////
 var N = parseInt(readline()); // Number of elements which make up the association table.
 var Q = parseInt(readline()); // Number Q of file names to be analyzed.
-
 
 var mimeObj = {}
 
@@ -57,21 +55,22 @@ for (var i = 0; i < Q; i++) {
 
 
 
-// TEST $3
+
+
+// TEST #3 /////////////////////////////////////////////
 var message = readline();
-var binary = "";
+var binary = '';
 
 for (var i = 0; i < message.length; i++) {
-      binary += message[i].charCodeAt(0).toString(2);
+      if(message[i].charCodeAt(0).toString(2).length < 7){
+        binary += ('0' + message[i].charCodeAt(0).toString(2));
+      } else {
+        binary += message[i].charCodeAt(0).toString(2);
+      }
   }
 
-if(binary.length < 7){
-    binary = '0' + binary;
-}
-
-var currentValue = '';
-var consecutive = 0;
 var NorrisCode = '';
+var currentValue = '';
 
 for(var j = 0; j < binary.length; j++){
     currentValue = binary[j];
@@ -92,54 +91,8 @@ for(var j = 0; j < binary.length; j++){
         }
 }
 
-print(binary);
 print(NorrisCode);
 
-// var message = readline();
-//
-//
-// var message = '%'
-// var binary = "";
-//
-// for (var i = 0; i < message.length; i++) {
-//       binary += message[i].charCodeAt(0).toString(2);
-//   }
-//
-// var currentValue = '';
-// var consecutive = 0;
-// var NorrisCode = '';
-//
-// for(var j = 0; j < binary.length; j++){
-//     currentValue = binary[j];
-//         if(currentValue == 1 && j === 0){
-//             NorrisCode += '0 0';
-//         }
-//         else if(currentValue == 0 && j === 0){
-//             NorrisCode += '00 0';
-//         }
-//         else if(binary[j] === binary[j-1]){
-//             consecutive++
-//         }
-//         else if(binary[j] !== binary[j-1]){
-//             Reset(currentValue)
-//         }
-// }
-//
-// function Reset(value){
-//   for(var i = 0; i < consecutive; i++){
-//     NorrisCode += '0'
-//   }
-//   consecutive = 1;
-//   if(value == 1){
-//     NorrisCode += ' 0 0';
-//   }
-//   else {
-//     NorrisCode += ' 00 0'
-//   }
-// }
-//
-// print(binary);
-// print(NorrisCode);
 
 
-// TEST $4
+// TEST #4 /////////////////////////////////////////////
